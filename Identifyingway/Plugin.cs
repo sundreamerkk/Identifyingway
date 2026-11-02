@@ -18,7 +18,7 @@ public sealed class Plugin : IDalamudPlugin
     [PluginService] internal static IDataManager DataManager { get; private set; } = null!;
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
 
-    private const string CommandName = "/pmycommand";
+    private const string CommandName = "/idw";
 
     public Configuration Configuration { get; init; }
 
@@ -35,14 +35,14 @@ public sealed class Plugin : IDalamudPlugin
         var evilImagePath = Path.Combine(PluginInterface.AssemblyLocation.Directory?.FullName!, "guh.jpg");
 
         ConfigWindow = new ConfigWindow(this);
-        MainWindow = new MainWindow(this, goatImagePath);
+        MainWindow = new MainWindow(this, evilImagePath);
 
         WindowSystem.AddWindow(ConfigWindow);
         WindowSystem.AddWindow(MainWindow);
 
         CommandManager.AddHandler(CommandName, new CommandInfo(OnCommand)
         {
-            HelpMessage = "A useful message to display in /xlhelp"
+            HelpMessage = "Open the main window"
         });
 
         // Tell the UI system that we want our windows to be drawn through the window system

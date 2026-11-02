@@ -11,14 +11,14 @@ namespace SamplePlugin.Windows;
 
 public class MainWindow : Window, IDisposable
 {
-    private readonly string goatImagePath;
+    private readonly string evilImagePath;
     private readonly Plugin plugin;
 
     // We give this window a hidden ID using ##.
     // The user will see "My Amazing Window" as window title,
     // but for ImGui the ID is "My Amazing Window##With a hidden ID"
-    public MainWindow(Plugin plugin, string goatImagePath)
-        : base("My Amazing Window##With a hidden ID", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
+    public MainWindow(Plugin plugin, string evilImagePath)
+        : base("Identifyingway##MainWindow", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
         SizeConstraints = new WindowSizeConstraints
         {
@@ -26,7 +26,7 @@ public class MainWindow : Window, IDisposable
             MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
 
-        this.goatImagePath = goatImagePath;
+        this.evilImagePath = evilImagePath;
         this.plugin = plugin;
     }
 
@@ -34,9 +34,9 @@ public class MainWindow : Window, IDisposable
 
     public override void Draw()
     {
-        ImGui.Text($"The random config bool is {plugin.Configuration.SomePropertyToBeSavedAndWithADefault}");
+        ImGui.Text($"Get this man a {plugin.Configuration.SomePropertyToBeSavedAndWithADefault}...");
 
-        if (ImGui.Button("Show Settings"))
+        if (ImGui.Button("Alter this reality"))
         {
             plugin.ToggleConfigUi();
         }
@@ -51,8 +51,8 @@ public class MainWindow : Window, IDisposable
             // Check if this child is drawing
             if (child.Success)
             {
-                ImGui.Text("Have a goat:");
-                var goatImage = Plugin.TextureProvider.GetFromFile(goatImagePath).GetWrapOrDefault();
+                ImGui.Text("guh...");
+                var goatImage = Plugin.TextureProvider.GetFromFile(evilImagePath).GetWrapOrDefault();
                 if (goatImage != null)
                 {
                     using (ImRaii.PushIndent(55f))
@@ -84,7 +84,7 @@ public class MainWindow : Window, IDisposable
                 }
                 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text($"Current job:");
+                ImGui.Text($"This is you:");
                 
                 // Scaling hardcoded pixel values is important, as otherwise users with HUD scales above or below 100%
                 // won't be able to see everything.
@@ -108,7 +108,7 @@ public class MainWindow : Window, IDisposable
                 var territoryId = Plugin.ClientState.TerritoryType;
                 if (Plugin.DataManager.GetExcelSheet<TerritoryType>().TryGetRow(territoryId, out var territoryRow))
                 {
-                    ImGui.Text($"Current location:");
+                    ImGui.Text($"Get doxxed idiot:");
                     ImGui.SameLine(120 * ImGuiHelpers.GlobalScale);
                     ImGui.Text(territoryRow.PlaceName.Value.Name.ToString());
                 }

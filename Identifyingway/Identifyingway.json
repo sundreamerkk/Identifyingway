@@ -1,0 +1,14 @@
+{
+  "Author": "sundreamerkk",
+  "Name": "Identifyingway",
+  "Punchline": "Rename yourself as you see fit, built with roleplay in mind!",
+  "Description": "Adds custom names and character management settings. Alter your player name, set automations with Glamourer and Penumbra integrations, with as little extra fluff as possible.",
+  "Tags": [ "Appearance", "Customize", "Design", "Character", "Rename", "Name" ],
+  "InternalName": "Identifyingway",
+  "AssemblyVersion": "0.0.0.1",
+  "RepoUrl": "https://github.com/sundreamerkk/Identifyingway",
+  "ApplicableVersion": "any",
+  "DalamudApiLevel": 15,
+  "ImageUrls": null,
+  "IconUrl": "https://raw.githubusercontent.com/sundreamerkk/Identifyingway/master/Data/them.jpg"
+}

@@ -12,7 +12,7 @@ public class ConfigWindow : Window, IDisposable
     // We give this window a constant ID using ###.
     // This allows for labels to be dynamic, like "{FPS Counter}fps###XYZ counter window",
     // and the window ID will always be "###XYZ counter window" for ImGui
-    public ConfigWindow(Plugin plugin) : base("A Wonderful Configuration Window###With a constant ID")
+    public ConfigWindow(Plugin plugin) : base("Identifyingway Config##ConfigWindow")
     {
         Flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoScrollbar |
                 ImGuiWindowFlags.NoScrollWithMouse;
@@ -42,7 +42,7 @@ public class ConfigWindow : Window, IDisposable
     {
         // Can't ref a property, so use a local copy
         var configValue = configuration.SomePropertyToBeSavedAndWithADefault;
-        if (ImGui.Checkbox("Random Config Bool", ref configValue))
+        if (ImGui.Checkbox("KILL EVERYONE", ref configValue))
         {
             configuration.SomePropertyToBeSavedAndWithADefault = configValue;
             // Can save immediately on change if you don't want to provide a "Save and Close" button

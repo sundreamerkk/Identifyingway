@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
+  <PropertyGroup>
+    <Version>0.0.0.1</Version>
+    <!-- Manifest fields (see https://github.com/goatcorp/DalamudPackager/blob/827d88dc/DalamudPackager/DalamudPackager.cs#L420) -->
+    <Author>sundreamerkk</Author>
+    <Name>Identifyingway</Name>
+    <Punchline>Rename yourself as you see fit, built with roleplay in mind!</Punchline>
+    <Description>Adds custom names and character management settings. Alter your player name, set automations with Glamourer and Penumbra integrations, with as little extra fluff as possible.</Description>
+    <RepoUrl>https://github.com/sundreamerkk/Identifyingway</RepoUrl>
+    <Tags>character;customize;rename</Tags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\Data\guh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
